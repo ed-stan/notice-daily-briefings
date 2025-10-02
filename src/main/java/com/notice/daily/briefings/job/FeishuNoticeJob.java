@@ -23,6 +23,9 @@ public class FeishuNoticeJob {
     @Autowired
     SendMsg sendMsg;
 
+    /**
+     * 每日9点发送通知
+     */
     @Scheduled(cron = "0 0 9 * * ?", zone = "Asia/Shanghai")
     public void sendNotice() {
         log.info("Sending daily notice at 9 AM");
